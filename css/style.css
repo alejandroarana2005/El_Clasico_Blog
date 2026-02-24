@@ -93,11 +93,11 @@ html, body {
 
     /* Fondo semitransparente estilo glass */
     background: rgba(0, 0, 0, 0.45); 
-    backdrop-filter: blur(2px); 
+    backdrop-filter: blur(1.5px); 
     -webkit-backdrop-filter: blur(10px); /* soporte Safari */
 
     box-sizing: border-box;
-    border-top: 1px solid rgba(255, 255, 255, 0.2); 
+    border-top: 1px solid rgba(255, 255, 255, 0.3); 
     border-left: 1px solid rgba(255, 255, 255, 0.2);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
 }

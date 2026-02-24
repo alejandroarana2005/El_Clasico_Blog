@@ -45,10 +45,26 @@ html, body {
     font-weight: bold;
     text-transform: uppercase;
     transition: color 0.3s ease;
+    transition: all 0.5s ease;
+    border-radius: 30px;
+    padding: 10px 10px;
 }
 
 .nav-link:hover {
-    color: #D9A920;
+    
+    letter-spacing: 3px;
+    
+    color: #D9A920; 
+    box-shadow: rgb(217,169,32) 0px 7px 29px 0px;
+}
+
+.nav-link:active {
+    letter-spacing: 3px;
+    background-color: rgb(217,169,32) 0px 7px 29px 0px;
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(217,169,32) 0px 7px 29px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
 }
 
 /* Imagen hero */
@@ -135,6 +151,57 @@ body {
 
 main {
     padding: 20px;
+    max-width: 1200px;   /* ancho máximo del contenido */
+    margin: 0 auto;      /* centra todo el bloque */
+    box-sizing: border-box;
+}
+
+/* From Uiverse.io by gharsh11032000 */ 
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+
+  /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+  /* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    border: 2px solid #414141;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    left: 0.2em;
+    bottom: 0.2em;
+    background-color: white;
+    border-radius: inherit;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.switch input:checked + .slider {
+    box-shadow: 0 0 20px rgba(9, 117, 241, 0.8);
+    border: 2px solid #0974f1;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(1.5em);
 }
 
 .content-section { 
@@ -144,6 +211,9 @@ main {
     border-radius: 8px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     transition: all 0.4s ease; 
+    max-width: 1000px;   /* ancho máximo de cada sección */
+    margin-left: auto;   /* margen automático para centrar */
+    margin-right: auto;
 } 
 
 .content-section:hover { 
@@ -152,11 +222,61 @@ main {
     background-color: #fdfdfd; 
 }
 
+
 .content-section h2 {
     color: #000000;
     border-bottom: 2px solid #000000;
     padding-bottom: 10px;
 }
+
+.content-section h3 {
+    color: #D9A920;          /* dorado para destacar */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    border-left: 4px solid #000; 
+    padding-left: 10px;
+}
+
+
+.content-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 15px auto;   
+    display: block;      
+}
+
+.historia-contenido {
+    display: flex;
+    align-items: center;   /* alinea arriba */
+    gap: 20px;                 /* espacio entre texto e imagen */
+}
+
+.historia-texto {
+    flex: 2;                   /* ocupa más espacio */
+}
+
+.historia-imagen {
+    flex: 1;
+                   /* ocupa menos espacio */
+}
+
+.historia-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+blockquote {
+    font-style: italic;
+    color: #555;
+    border-left: 4px solid #D9A920;
+    padding-left: 15px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+}
+
 
 footer {
     background-color: #1a1a1a;
@@ -165,6 +285,50 @@ footer {
     padding: 10px;
     font-size: 0.8em;
 }
+
+   .doble-imagen {
+    display: flex;
+    gap: 15px;              /* espacio entre las dos imágenes */
+    justify-content: center; /* centra las imágenes en el bloque */
+    }
+
+    .doble-imagen img {
+    width: 48%;             /* cada imagen ocupa casi la mitad del bloque */
+    height: auto;
+    border-radius: 5px;
+    }
+
+    .tabla-estadisticas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+    .tabla-estadisticas {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.tabla-estadisticas th, 
+.tabla-estadisticas td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabla-estadisticas th {
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.tabla-estadisticas tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
 
 /* Responsividad */
 @media (max-width: 768px) {
@@ -183,4 +347,13 @@ footer {
         display: block;
         padding: 10px 0;
     }
+
+    .historia-contenido { 
+        flex-direction: column; /* apila texto e imagen */ 
+    } 
+    
+    .historia-imagen { 
+        margin-top: 15px; 
+    }
+
 }

@@ -510,6 +510,29 @@ footer {
     gap: 20px;
 }
 
+#voice-toggle {
+    background-color: #0974f1;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 20px auto;
+    display: block;
+}
+
+#voice-toggle:hover {
+    background-color: #055bb5;
+}
+
+
+
+
+
+
+
+
 /* Estilos móviles */
 @media (max-width: 768px) {
     .hamburger {
@@ -574,6 +597,9 @@ footer {
     .content-section {
         padding: 10px;
     }
+
+
+
 
 
 

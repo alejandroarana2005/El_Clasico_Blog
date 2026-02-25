@@ -26,3 +26,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Voz en off accesible con Web Speech API
+const voiceButton = document.getElementById('voice-toggle');
+let isSpeaking = false;
+let utterance;
+
+voiceButton.addEventListener('click', () => {
+  if (!isSpeaking) {
+    // Selecciona todo el texto que quieras leer
+    const textToRead = document.querySelector('main').innerText;
+
+    // Crear narración
+    utterance = new SpeechSynthesisUtterance(textToRead);
+    utterance.lang = 'es-ES'; // idioma español
+    utterance.rate = 1;       // velocidad normal
+    utterance.pitch = 1;      // tono normal
+
+    // Iniciar narración
+    speechSynthesis.speak(utterance);
+    isSpeaking = true;
+    voiceButton.textContent = "🔇 Detener Narración";
+
+    // Cuando termine de hablar, resetear estado
+    utterance.onend = () => {
+      isSpeaking = false;
+      voiceButton.textContent = "🔊 Activar Narración";
+    };
+  } else {
+    // Detener narración
+    speechSynthesis.cancel();
+    isSpeaking = false;
+    voiceButton.textContent = "🔊 Activar Narración";
+  }
+});
+
+

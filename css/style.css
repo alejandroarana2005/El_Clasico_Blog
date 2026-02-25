@@ -15,8 +15,8 @@ html, body {
 
 /* Encabezado superior */
 .hero-header {
-    background-color: #000000; /* sólido para diferenciar */
-    color: #ffffff;
+    background-color: #ffffff; /* sólido para diferenciar */
+    color: #000000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +40,7 @@ html, body {
 }
 
 .nav-link {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
@@ -124,7 +124,7 @@ html, body {
     font-weight: 900;
     text-transform: uppercase;
     margin: 0 0 20px 0;
-    color: #ffffff;
+    color: #fcfcfc;
     text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
     text-align: left;        /* alineado a la izquierda */
 }
@@ -175,7 +175,7 @@ main {
 
   /* The slider */
 .slider {
-    position: absolute;
+    position: absolute;;
     cursor: pointer;
     inset: 0;
     border: 2px solid #414141;
@@ -195,6 +195,20 @@ main {
     transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
+.theme-toggle-container {
+    display: flex;
+    justify-content: center;  /* centra horizontalmente */
+    align-items: center;      /* alinea verticalmente */
+    margin: 20px 0;           /* espacio arriba y abajo */
+}
+
+.theme-toggle-container #theme-label {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
 .switch input:checked + .slider {
     box-shadow: 0 0 20px rgba(9, 117, 241, 0.8);
     border: 2px solid #0974f1;
@@ -203,6 +217,68 @@ main {
 .switch input:checked + .slider:before {
     transform: translateX(1.5em);
 }
+
+/* modo oscuro */
+
+/* Texto del switch */
+#theme-label {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Tema claro (por defecto) */
+body.light-mode {
+    background-color: #dddddd;
+    color: #333;
+}
+
+body.light-mode .hero-header {
+    background-color: #000;
+    color: #fff;
+}
+
+body.light-mode .nav-link {
+    color: #fff;
+}
+
+/* Tema oscuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+body.dark-mode .hero-header {
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+}
+
+body.dark-mode .nav-link {
+    color: #f5f5f5;
+}
+
+body.dark-mode .content-section {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .content-section h2 {
+    color: #f5f5f5;
+    border-bottom: 2px solid #f5f5f5;
+}
+
+body.dark-mode .content-section h3 {
+    color: #D9A920;
+    border-left: 4px solid #f5f5f5;
+}
+
+body.dark-mode footer {
+    background-color: #000;
+    color: #f5f5f5;
+}
+
+/* Secciones de contenido */
 
 .content-section { 
     margin-bottom: 30px; 
@@ -247,6 +323,9 @@ main {
     display: block;      
 }
 
+
+/* Bloques de historia con texto e imagen */
+
 .historia-contenido {
     display: flex;
     align-items: center;   /* alinea arriba */
@@ -257,16 +336,52 @@ main {
     flex: 2;                   /* ocupa más espacio */
 }
 
-.historia-imagen {
-    flex: 1;
-                   /* ocupa menos espacio */
+ .doble-imagen {
+    display: flex;
+    gap: 19px;              /* espacio entre las dos imágenes */
+    justify-content: center; /* centra las imágenes en el bloque */
+    width: 100%;
+    }
+
+    .doble-imagen figure { flex: 1; display: flex; flex-direction: column; align-items: center; }
+
+    .doble-imagen img {
+    width: 100%;             /* cada imagen ocupa casi la mitad del bloque */
+    height: auto;
+    max-width: 500px;       /* limita el tamaño máximo para pantallas pequeñas */
+    border-radius: 5px;
+    }
+
+    .doble-imagen figcaption { margin-top: 8px; font-size: 0.9rem; color: #555; text-align: center; }
+
+    .historia-imagen {
+    display: flex;
+    flex: 1.5;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .historia-imagen img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 700px;
+    padding: 0%;
     height: auto;
     border-radius: 5px;
 }
+
+.historia-imagen figcaption {
+    width: 100%;
+    padding: 0%;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: #555;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Citas destacadas */
 
 blockquote {
     font-style: italic;
@@ -277,6 +392,7 @@ blockquote {
     background-color: #f9f9f9;
 }
 
+/* Pie de página */
 
 footer {
     background-color: #1a1a1a;
@@ -286,17 +402,7 @@ footer {
     font-size: 0.8em;
 }
 
-   .doble-imagen {
-    display: flex;
-    gap: 15px;              /* espacio entre las dos imágenes */
-    justify-content: center; /* centra las imágenes en el bloque */
-    }
-
-    .doble-imagen img {
-    width: 48%;             /* cada imagen ocupa casi la mitad del bloque */
-    height: auto;
-    border-radius: 5px;
-    }
+/* Tabla de estadísticas */
 
     .tabla-estadisticas {
     width: 100%;
@@ -329,6 +435,13 @@ footer {
     background-color: #f9f9f9;
 }
 
+.fuente-datos {
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 5px;
+    text-align: center;
+}
+
 
 /* Responsividad */
 @media (max-width: 768px) {
@@ -352,8 +465,5 @@ footer {
         flex-direction: column; /* apila texto e imagen */ 
     } 
     
-    .historia-imagen { 
-        margin-top: 15px; 
-    }
 
 }

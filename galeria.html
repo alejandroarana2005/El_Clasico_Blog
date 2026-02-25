@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - El Clásico: Real Madrid vs. FC Barcelona</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Unbounded:wght@200..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Barra de navegación superior -->
+        <header class="hero-header">
+            <h1>EL CLÁSICO BLOG</h1>
+            <div class="hamburger"> ☰ </div>
+            <nav>
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="index.html#historia" class="nav-link">Historia</a>
+                <a href="index.html#impacto-deportivo" class="nav-link">Impacto</a>
+                <a href="index.html#estadisticas" class="nav-link">Estadísticas</a>
+                <a href="galeria.html" class="nav-link">Galería</a>
+            </nav>
+        </header>
+
+        <!-- Imagen de fondo con overlay -->
+        <div class="hero-image">
+            <img src="src/messiMarceloRamos.jfif" alt="Imagen icónica del Clásico">
+            <div class="hero-description">
+                <h2 class="hero-title">GALERÍA</h2>
+                <p class="hero-text">Explora las imágenes más icónicas de la historia de El Clásico. Momentos que han definido la rivalidad entre Real Madrid y Barcelona.</p>
+            </div>
+
+
+        </div>
+    </section>
+
+    <main>
+        <div class="theme-toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+            <span id="theme-label">Light</span>
+        </div>
+
+        <section class="content-section">
+            <h2>Galería</h2>
+            
+            <div class="galeria-item">
+                <div class="galeria-imagen">
+                    <img src="src/messiMarceloRamos.jfif" alt="Imagen del Clásico">
+                </div>
+                <div class="galeria-contexto">
+                    <h3>Título de la imagen</h3>
+                    <p>Añade aquí el contexto o descripción de esta imagen del Clásico. Puedes describir el momento histórico, los jugadores destacados, o la importancia de esta fotografía en la rivalidad entre Real Madrid y Barcelona.</p>
+                </div>
+            </div>
+
+            <div class="galeria-item galeria-item-reverse">
+                <div class="galeria-imagen">
+                    <img src="src/primerPartido.jpg" alt="Primer Clásico">
+                </div>
+                <div class="galeria-contexto">
+                    <h3>Título de la imagen</h3>
+                    <p>Añade aquí el contexto o descripción de esta imagen del Clásico. Puedes describir el momento histórico, los jugadores destacados, o la importancia de esta fotografía en la rivalidad entre Real Madrid y Barcelona.</p>
+                </div>
+            </div>
+
+            <div class="galeria-item">
+                <div class="galeria-imagen">
+                    <img src="src/messiVsRonaldo.jpg" alt="Messi vs Ronaldo">
+                </div>
+                <div class="galeria-contexto">
+                    <h3>Título de la imagen</h3>
+                    <p>Añade aquí el contexto o descripción de esta imagen del Clásico. Puedes describir el momento histórico, los jugadores destacados, o la importancia de esta fotografía en la rivalidad entre Real Madrid y Barcelona.</p>
+                </div>
+            </div>
+
+            <div class="galeria-item galeria-item-reverse">
+                <div class="galeria-imagen">
+                    <img src="src/LamineKylian.png" alt="Lamine y Kylian">
+                </div>
+                <div class="galeria-contexto">
+                    <h3>Título de la imagen</h3>
+                    <p>Añade aquí el contexto o descripción de esta imagen del Clásico. Puedes describir el momento histórico, los jugadores destacados, o la importancia de esta fotografía en la rivalidad entre Real Madrid y Barcelona.</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <footer>
+        <p>Blog elaborado por Alejandro Arana Fernandéz y Sergio Martinez</p>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const label = document.getElementById('theme-label');
+        const body = document.body;
+
+        // Tema inicial
+        body.classList.add('light-mode');
+
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                label.textContent = 'Dark';
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                label.textContent = 'Light';
+            }
+        });
+    </script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
